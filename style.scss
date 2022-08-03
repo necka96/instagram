@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .app__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .btn {
+      position: relative;
+      background: #27282c;
+      color: #f2f2f2;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 400;
+      padding: 10px 30px;
+      margin-top: 10px;
+      display: inline-block;
+      transition: 0.5s;
+      &:hover {
+        background: var(--color);
+        box-shadow: 0 0 25px var(--color);
+        color: var(--color);
+        i::before {
+          left: 0%;
+          transform: translateX(-50%) rotate(45deg);
+          box-shadow: 30px 29px var(--color);
+        }
+        i::after {
+          left: 100%;
+          transform: translateX(-50%) rotate(-45deg);
+          box-shadow: 28px -29px var(--color);
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background: #27282c;
+      }
+      span {
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+      i {
+        position: absolute;
+        inset: 0;
+        display: block;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          top: -6px;
+          left: 100%;
+          transform: translateX(-50%);
+          height: 10px;
+          background: #27282c;
+          border: 2px solid var(--color);
+          transition: 0.5s;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 10px;
+          bottom: -6px;
+          left: 0;
+          transform: translateX(-50%);
+          height: 10px;
+          background: #27282c;
+          border: 2px solid var(--color);
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}

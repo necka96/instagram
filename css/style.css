@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+section .app__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+section .app__flex .btn {
+  position: relative;
+  background: #27282c;
+  color: #f2f2f2;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+  padding: 10px 30px;
+  margin-top: 10px;
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section .app__flex .btn:hover {
+  background: var(--color);
+  -webkit-box-shadow: 0 0 25px var(--color);
+          box-shadow: 0 0 25px var(--color);
+  color: var(--color);
+}
+
+section .app__flex .btn:hover i::before {
+  left: 0%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  -webkit-box-shadow: 30px 29px var(--color);
+          box-shadow: 30px 29px var(--color);
+}
+
+section .app__flex .btn:hover i::after {
+  left: 100%;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+  -webkit-box-shadow: 28px -29px var(--color);
+          box-shadow: 28px -29px var(--color);
+}
+
+section .app__flex .btn::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+
+section .app__flex .btn span {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+section .app__flex .btn i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+section .app__flex .btn i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  top: -6px;
+  left: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 10px;
+  background: #27282c;
+  border: 2px solid var(--color);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section .app__flex .btn i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  bottom: -6px;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 10px;
+  background: #27282c;
+  border: 2px solid var(--color);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/*# sourceMappingURL=style.css.map */
